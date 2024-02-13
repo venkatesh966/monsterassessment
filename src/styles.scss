@@ -1,0 +1,47 @@
+/* styles.css */
+
+:root {
+    --primary-color: beige; 
+    --secondary-color: #dcba851c;
+    --btn-secondary-color: #6c757d; 
+    --btn-primary-color: red;
+    --navbar-color: black;
+    --border: 1px solid lightgray;
+
+  }
+
+  body {
+    background: var(--primary-color);
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .btn-primary {
+    // background-color: var( --btn-primary-color);
+    // border-color: var( --btn-primary-color);
+  }
+  
+  .btn-secondary {
+    background-color: var(--btn-secondary-color);
+    border-color: var(--btn-secondary-color);
+  }
+
+  .navbar-bg {
+    background-color: var(--navbar-color);
+  }
+
+  .form-body {
+    border-left: var(--border);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-right: var(--border);
+    background: var(--secondary-color);
+    padding-top: 15px;
+    margin-top: 0;
+}
+
+
+
+
+  
