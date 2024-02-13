@@ -75,6 +75,7 @@ export class AuthService {
     const uidFromSessionStorage = sessionStorage.getItem('token');
     
     if (!uidFromSessionStorage) {
+      this.logout()
       return false; 
     }
 
