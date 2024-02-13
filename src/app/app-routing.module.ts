@@ -10,7 +10,7 @@ import { publicRoute } from './guard/public-route.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, 
   { path: 'login', component: LoginComponent, canActivate: [publicRoute] },
-  { path: 'register', component: RegisterComponent, canActivate: [publicRoute] },
+  { path: 'register', component: RegisterComponent },
   { path: 'email-verification', component: EmailVerificationComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [privateRoute] },
   { path: '**', redirectTo: '/login' }, 
