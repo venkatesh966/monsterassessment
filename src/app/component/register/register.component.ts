@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AuthService } from '../../service/auth.service';
 
 @Component({
@@ -10,19 +9,25 @@ import { AuthService } from '../../service/auth.service';
 export class RegisterComponent implements OnInit {
   email: string = '';
   password: string = '';
+  confirmPassword: string = '';
 
   constructor(private auth: AuthService) {}
 
   ngOnInit(): void {}
 
   register() {
-    if (this.email == '') {
+    if (this.email === '') {
       alert('Please enter email');
       return;
     }
 
-    if (this.password == '') {
+    if (this.password === '') {
       alert('Please enter password');
+      return;
+    }
+
+    if (this.password !== this.confirmPassword) {
+      alert('Passwords do not match');
       return;
     }
 
@@ -30,5 +35,6 @@ export class RegisterComponent implements OnInit {
 
     this.email = '';
     this.password = '';
+    this.confirmPassword = '';
   }
 }

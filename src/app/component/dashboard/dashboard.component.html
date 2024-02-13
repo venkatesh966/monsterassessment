@@ -23,29 +23,30 @@
       <h5>Enter Flight Details</h5>
       <form (submit)="submitForm()">
         <div class="mb-3">
-          <label for="airline" class="form-label">Airline</label>
+          <label for="airline" class="form-label">Airline*</label>
           <input type="text" class="form-control" id="airline" [(ngModel)]="payload.airline" name="airline" required>
         </div>
         <div class="mb-3">
-          <label for="arrivalDate" class="form-label">Arrival Date</label>
+          <label for="arrivalDate" class="form-label">Arrival Date*</label>
           <input type="date" class="form-control" id="arrivalDate" [(ngModel)]="payload.arrivalDate" name="arrivalDate" required>
         </div>
         <div class="mb-3">
-          <label for="arrivalTime" class="form-label">Arrival Time</label>
+          <label for="arrivalTime" class="form-label">Arrival Time*</label>
           <input type="time" class="form-control" id="arrivalTime" [(ngModel)]="payload.arrivalTime" name="arrivalTime" required>
         </div>
         <div class="mb-3">
-          <label for="flightNumber" class="form-label">Flight Number</label>
+          <label for="flightNumber" class="form-label">Flight Number*</label>
           <input type="text" class="form-control" id="flightNumber" [(ngModel)]="payload.flightNumber" name="flightNumber" required>
         </div>
         <div class="mb-3">
-          <label for="numOfGuests" class="form-label">Number of Guests</label>
+          <label for="numOfGuests" class="form-label">Number of Guests*</label>
           <input type="number" class="form-control" id="numOfGuests" [(ngModel)]="payload.numOfGuests" name="numOfGuests" required>
         </div>
         <div class="mb-3">
           <label for="comments" class="form-label">Comments</label>
           <textarea class="form-control" id="comments" [(ngModel)]="payload.comments" name="comments"></textarea>
         </div>
+        <span>(*) required fields</span>
         <div class="mb-3 d-flex justify-content-end"> 
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>

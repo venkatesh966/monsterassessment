@@ -36,14 +36,12 @@ export class AuthService {
     this.fireauth.createUserWithEmailAndPassword(email, password).then(res => {
       alert('Registration Successful');
       this.sendEmailForVerification(res.user);
-      // this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
       this.router.navigate(['/register']);
     })
   }
 
-  // sign out
   logout() {
     this.fireauth.signOut().then(() => {
       sessionStorage.removeItem('token');
@@ -65,6 +63,9 @@ export class AuthService {
     console.log(user);
     user.sendEmailVerification().then((res: any) => {
       this.router.navigate(['/email-verification']);
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 2000);
     }, (err: any) => {
       alert('Something went wrong. Not able to send mail to your email.')
     })
@@ -94,7 +95,8 @@ export class AuthService {
   googleSignIn() {
     return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
       this.router.navigate(['/dashboard']);
-      sessionStorage.setItem('token', JSON.stringify(res.user?.uid));
+      const encrptedData = encrypt(res.user?.uid || "")
+      sessionStorage.setItem('token', encrptedData);
     }, err => {
       alert(err.message);
     })

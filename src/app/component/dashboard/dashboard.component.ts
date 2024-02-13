@@ -42,7 +42,7 @@ export class DashboardComponent {
       this.payload.arrivalTime.length < 1 ||
       this.payload.flightNumber.length < 1
     ) {
-      alert('Please fill in all fields');
+      alert('Please fill in all required fields');
       return;
     }
 
